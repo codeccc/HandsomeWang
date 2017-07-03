@@ -77,11 +77,15 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android , 状态栏," />
+  <meta name="keywords" content="android,状态栏," />
 
 
 
 
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
 
 
 
@@ -93,17 +97,17 @@
 
 
 
-<meta name="description" content="12345678910// 设置顶部状态栏颜色（此功能仅19版本以上可用）if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.KITKAT) &amp;#123;    Window window = getWindow();    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_S">
-<meta name="keywords" content="android , 状态栏">
+<meta name="description" content="心灵毒汤: 有时候不努力一把真的不知道什么叫绝望   这篇文章来介绍如何在java代码中更改系统状态栏和控制栏的颜色。    12345678910// 设置顶部状态栏颜色（此功能仅19版本以上可用）if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.KITKAT) &amp;#123;    Window window = getWindow();">
+<meta name="keywords" content="android,状态栏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="更改android 4.4以上系统的状态栏和控制栏颜色">
 <meta property="og:url" content="http://yoursite.com/2017/07/03/更改android-4-4以上系统的状态栏和控制栏颜色/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="12345678910// 设置顶部状态栏颜色（此功能仅19版本以上可用）if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.KITKAT) &amp;#123;    Window window = getWindow();    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_S">
-<meta property="og:updated_time" content="2017-07-03T09:19:15.969Z">
+<meta property="og:description" content="心灵毒汤: 有时候不努力一把真的不知道什么叫绝望   这篇文章来介绍如何在java代码中更改系统状态栏和控制栏的颜色。    12345678910// 设置顶部状态栏颜色（此功能仅19版本以上可用）if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.KITKAT) &amp;#123;    Window window = getWindow();">
+<meta property="og:updated_time" content="2017-07-03T13:00:32.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更改android 4.4以上系统的状态栏和控制栏颜色">
-<meta name="twitter:description" content="12345678910// 设置顶部状态栏颜色（此功能仅19版本以上可用）if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.KITKAT) &amp;#123;    Window window = getWindow();    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_S">
+<meta name="twitter:description" content="心灵毒汤: 有时候不努力一把真的不知道什么叫绝望   这篇文章来介绍如何在java代码中更改系统状态栏和控制栏的颜色。    12345678910// 设置顶部状态栏颜色（此功能仅19版本以上可用）if (Build.VERSION.SDK_INT &amp;gt;= Build.VERSION_CODES.KITKAT) &amp;#123;    Window window = getWindow();">
 
 
 
@@ -335,7 +339,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="樱花洛">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://img2.imgtn.bdimg.com/it/u=1370797396,803539702&fm=26&gp=0.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -369,6 +373,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -415,7 +441,13 @@
       
 
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置顶部状态栏颜色（此功能仅19版本以上可用）</span></div><div class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;</div><div class="line">    Window window = getWindow();</div><div class="line">    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);</div><div class="line">    SystemBarTintManager tintManager = <span class="keyword">new</span> SystemBarTintManager(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">// 激活状态栏设置</span></div><div class="line">    tintManager.setStatusBarTintEnabled(<span class="keyword">true</span>);</div><div class="line">    <span class="comment">// 使用颜色资源</span></div><div class="line">    tintManager.setStatusBarTintResource(R.color.button_pressed);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <div class="note primary"><p>心灵毒汤: 有时候不努力一把真的不知道什么叫绝望 </p>
+</div>
+<blockquote class="blockquote-center">这篇文章来介绍如何在java代码中更改系统状态栏和控制栏的颜色。</blockquote>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置顶部状态栏颜色（此功能仅19版本以上可用）</span></div><div class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;</div><div class="line">    Window window = getWindow();</div><div class="line">    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);</div><div class="line">    SystemBarTintManager tintManager = <span class="keyword">new</span> SystemBarTintManager(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">// 激活状态栏设置</span></div><div class="line">    tintManager.setStatusBarTintEnabled(<span class="keyword">true</span>);</div><div class="line">    <span class="comment">// 使用颜色资源</span></div><div class="line">    tintManager.setStatusBarTintResource(R.color.button_pressed);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面代码的意思就是</p>
 <ol>
 <li><p>首先将状态栏的设置为透明，不透明，下面你设置的颜色是没有效果的。</p>
@@ -432,6 +464,11 @@
     <div>
       
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="樱花洛 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
 
       
     </div>
@@ -439,6 +476,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>分享技术,共同成长!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-reward-image.jpg" alt="樱花洛 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay-reward-image.jpg" alt="樱花洛 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -454,7 +512,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android-状态栏/" rel="tag"># android , 状态栏</a>
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+            <a href="/tags/状态栏/" rel="tag"># 状态栏</a>
           
         </div>
       
@@ -534,7 +594,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://img2.imgtn.bdimg.com/it/u=1370797396,803539702&fm=26&gp=0.jpg"
+               src="/images/avatar.gif"
                alt="樱花洛" />
           <p class="site-author-name" itemprop="name">樱花洛</p>
            
@@ -553,23 +613,59 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">1</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/codeccc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3964287667" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
           
         </div>
 
@@ -577,6 +673,20 @@
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/codeccc" title="帅气迷人宝贝博的Github" target="_blank">帅气迷人宝贝博的Github</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
@@ -655,6 +765,8 @@
   
 
 
+  
+
 
 
 
@@ -682,6 +794,9 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
