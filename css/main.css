@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6f3750;
+  background: #b669d7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2927,6 +2927,9 @@ body {
   background: #ccc;
   text-align: center;
 }
+.post-header .post-title {
+  color: #000;
+}
 .post-title {
   color: #fff;
 }
@@ -3122,9 +3125,12 @@ body {
     padding: 0;
   }
 }
+.post-body {
+  color: #666;
+}
 a {
   backfground: rgba(153,0,0,0);
-  color: #ccc;
+  color: #ff1943;
 }
 a:hover {
   backfground: rgba(153,0,0,0);
