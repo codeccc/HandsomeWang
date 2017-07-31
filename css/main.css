@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #822ab5;
+  background: #777e1a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3135,6 +3135,12 @@ a {
 a:hover {
   backfground: rgba(153,0,0,0);
   color: #fff;
+}
+#wechat p {
+  color: #999;
+}
+#alipay p {
+  color: #999;
 }
 @-moz-keyframes colorChange {
   0%, 100% {
