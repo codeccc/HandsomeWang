@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: android  top: 101​        一般应用的开发都是纯色状态栏或者">
+<meta name="description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: androidtop: 101  ​        一般应用的开发都是纯色状态栏或者">
 <meta property="og:type" content="article">
 <meta property="og:title" content="樱花洛">
 <meta property="og:url" content="http://codewang.site/实现Android 彩色渐变状态栏.html">
 <meta property="og:site_name" content="樱花洛">
-<meta property="og:description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: android  top: 101​        一般应用的开发都是纯色状态栏或者">
+<meta property="og:description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: androidtop: 101  ​        一般应用的开发都是纯色状态栏或者">
 <meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc">
-<meta property="og:updated_time" content="2017-08-04T10:11:22.512Z">
+<meta property="og:updated_time" content="2017-08-04T11:09:00.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="樱花洛">
-<meta name="twitter:description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: android  top: 101​        一般应用的开发都是纯色状态栏或者">
+<meta name="twitter:description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: androidtop: 101  ​        一般应用的开发都是纯色状态栏或者">
 <meta name="twitter:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc">
 
 
@@ -450,8 +450,9 @@
       
         <pre><code>                                   ###                     实现Android 彩色渐变状态栏
 </code></pre><hr>
-<p>title: 实现Android 彩色渐变状态栏<br>date: 2017-08-04 18:10:22<br>tags: [android,状态栏]<br>categories: android </p>
-<h2 id="top-101"><a href="#top-101" class="headerlink" title="top: 101"></a>top: 101</h2><p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
+<p>title: 实现Android 彩色渐变状态栏<br>date: 2017-08-04 18:10:22<br>tags: [android,状态栏]<br>categories: android<br>top: 101</p>
+<hr>
+<p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
 <p><img src="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc" alt="image"></p>
 <p>效果显示很不错的,接下来正式进入我们的教程。</p>
 <p>1.首先在<code>colors.xml</code>中定义好使用的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;color name="theme_color_one"&gt;#f8b195&lt;/color&gt;</div><div class="line">&lt;color name="theme_color_two"&gt;#f291b0&lt;/color&gt;</div></pre></td></tr></table></figure></p>
@@ -609,17 +610,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -731,22 +723,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#top-101"><span class="nav-number">1.</span> <span class="nav-text">top: 101</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://codewang.site/"/>
-  <updated>2017-08-04T10:11:22.512Z</updated>
+  <updated>2017-08-04T11:09:00.708Z</updated>
   <id>http://codewang.site/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://codewang.site/%E5%AE%9E%E7%8E%B0Android%20%E5%BD%A9%E8%89%B2%E6%B8%90%E5%8F%98%E7%8A%B6%E6%80%81%E6%A0%8F.html"/>
     <id>http://codewang.site/实现Android 彩色渐变状态栏.html</id>
     <published>2017-08-04T10:09:35.763Z</published>
-    <updated>2017-08-04T10:11:22.512Z</updated>
+    <updated>2017-08-04T11:09:00.708Z</updated>
     
     <content type="html"><![CDATA[<pre><code>                                   ###                     实现Android 彩色渐变状态栏
 </code></pre><hr>
-<p>title: 实现Android 彩色渐变状态栏<br>date: 2017-08-04 18:10:22<br>tags: [android,状态栏]<br>categories: android </p>
-<h2 id="top-101"><a href="#top-101" class="headerlink" title="top: 101"></a>top: 101</h2><p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
+<p>title: 实现Android 彩色渐变状态栏<br>date: 2017-08-04 18:10:22<br>tags: [android,状态栏]<br>categories: android<br>top: 101</p>
+<hr>
+<p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
 <p><img src="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc" alt="image"></p>
 <p>效果显示很不错的,接下来正式进入我们的教程。</p>
 <p>1.首先在<code>colors.xml</code>中定义好使用的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;color name="theme_color_one"&gt;#f8b195&lt;/color&gt;</div><div class="line">&lt;color name="theme_color_two"&gt;#f291b0&lt;/color&gt;</div></pre></td></tr></table></figure></p>
