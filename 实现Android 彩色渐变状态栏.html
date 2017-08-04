@@ -101,12 +101,12 @@
 <meta property="og:url" content="http://codewang.site/实现Android 彩色渐变状态栏.html">
 <meta property="og:site_name" content="樱花洛">
 <meta property="og:description" content="​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:  效果显示很不错的,接下来正式进入我们的教程。 1.首先在colors.xml中定义好使用的颜色12&amp;lt;color name=&quot;them">
-<meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc">
-<meta property="og:updated_time" content="2017-08-04T11:16:06.557Z">
+<meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png">
+<meta property="og:updated_time" content="2017-08-04T11:17:40.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现Android 彩色渐变状态栏">
 <meta name="twitter:description" content="​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:  效果显示很不错的,接下来正式进入我们的教程。 1.首先在colors.xml中定义好使用的颜色12&amp;lt;color name=&quot;them">
-<meta name="twitter:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc">
+<meta name="twitter:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png">
 
 
 
@@ -472,7 +472,7 @@
 
       
         <p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
-<p><img src="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc" alt="image"></p>
+<p><img src="http://osk74z31x.bkt.clouddn.com/model_plan_add.png" alt="image"></p>
 <p>效果显示很不错的,接下来正式进入我们的教程。</p>
 <p>1.首先在<code>colors.xml</code>中定义好使用的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;color name="theme_color_one"&gt;#f8b195&lt;/color&gt;</div><div class="line">&lt;color name="theme_color_two"&gt;#f291b0&lt;/color&gt;</div></pre></td></tr></table></figure></p>
 <p>2.在<code>drawable</code>文件加下创建<code>statusbar_theme_shape.xml</code>文件,并添加如下代码:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;shape xmlns:android="http://schemas.android.com/apk/res/android"&gt;</div><div class="line"></div><div class="line">    &lt;corners android:radius="2dp"/&gt;</div><div class="line">    &lt;gradient</div><div class="line">        android:angle="0"</div><div class="line">        android:endColor="@color/theme_color_two"</div><div class="line">        android:startColor="@color/theme_color_one"/&gt;</div><div class="line"></div><div class="line">&lt;/shape&gt;</div></pre></td></tr></table></figure></p>
