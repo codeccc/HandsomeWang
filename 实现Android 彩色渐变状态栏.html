@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android,状态栏," />
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: androidtop: 101  ​        一般应用的开发都是纯色状态栏或者">
+<meta name="description" content="​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:  效果显示很不错的,接下来正式进入我们的教程。 1.首先在colors.xml中定义好使用的颜色12&amp;lt;color name=&quot;them">
+<meta name="keywords" content="android,状态栏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="樱花洛">
+<meta property="og:title" content="实现Android 彩色渐变状态栏">
 <meta property="og:url" content="http://codewang.site/实现Android 彩色渐变状态栏.html">
 <meta property="og:site_name" content="樱花洛">
-<meta property="og:description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: androidtop: 101  ​        一般应用的开发都是纯色状态栏或者">
+<meta property="og:description" content="​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:  效果显示很不错的,接下来正式进入我们的教程。 1.首先在colors.xml中定义好使用的颜色12&amp;lt;color name=&quot;them">
 <meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc">
-<meta property="og:updated_time" content="2017-08-04T11:09:00.708Z">
+<meta property="og:updated_time" content="2017-08-04T11:16:06.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="樱花洛">
-<meta name="twitter:description" content="###                     实现Android 彩色渐变状态栏  title: 实现Android 彩色渐变状态栏date: 2017-08-04 18:10:22tags: [android,状态栏]categories: androidtop: 101  ​        一般应用的开发都是纯色状态栏或者">
+<meta name="twitter:title" content="实现Android 彩色渐变状态栏">
+<meta name="twitter:description" content="​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:  效果显示很不错的,接下来正式进入我们的教程。 1.首先在colors.xml中定义好使用的颜色12&amp;lt;color name=&quot;them">
 <meta name="twitter:image" content="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc">
 
 
@@ -139,7 +140,7 @@
 
 
 
-  <title> | 樱花洛</title>
+  <title>实现Android 彩色渐变状态栏 | 樱花洛</title>
   
 
 
@@ -349,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">实现Android 彩色渐变状态栏</h1>
         
 
         <div class="post-meta">
@@ -361,7 +362,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T18:09:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T18:10:22+08:00">
                 2017-08-04
               </time>
             
@@ -371,6 +372,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -389,7 +412,7 @@
 
           
           
-             <span id="/实现Android 彩色渐变状态栏.html" class="leancloud_visitors" data-flag-title="">
+             <span id="/实现Android 彩色渐变状态栏.html" class="leancloud_visitors" data-flag-title="实现Android 彩色渐变状态栏">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  353
+                  332
                 </span>
               
 
@@ -448,11 +471,7 @@
       
 
       
-        <pre><code>                                   ###                     实现Android 彩色渐变状态栏
-</code></pre><hr>
-<p>title: 实现Android 彩色渐变状态栏<br>date: 2017-08-04 18:10:22<br>tags: [android,状态栏]<br>categories: android<br>top: 101</p>
-<hr>
-<p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
+        <p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
 <p><img src="http://osk74z31x.bkt.clouddn.com/model_plan_add.png-codeccc" alt="image"></p>
 <p>效果显示很不错的,接下来正式进入我们的教程。</p>
 <p>1.首先在<code>colors.xml</code>中定义好使用的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;color name="theme_color_one"&gt;#f8b195&lt;/color&gt;</div><div class="line">&lt;color name="theme_color_two"&gt;#f291b0&lt;/color&gt;</div></pre></td></tr></table></figure></p>
@@ -520,6 +539,14 @@
   
 </div>
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"><i class="fa fa-tag"></i> android</a>
+          
+            <a href="/tags/状态栏/" rel="tag"><i class="fa fa-tag"></i> 状态栏</a>
+          
+        </div>
       
 
       
