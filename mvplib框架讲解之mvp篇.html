@@ -102,9 +102,9 @@
 <meta property="og:site_name" content="樱花洛">
 <meta property="og:description" content="贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。   这篇文章讲述mvplib依赖库的相关功能及其用法。  一、mvplib的build.gradle 引用的依赖库及其他配置12345678910111213141516171819202122232425262728293031323334apply plugin: &apos;com.android.library&apos;android &amp;#123;">
 <meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%841.png">
-<meta property="og:image" content="http://pic.92to.com/2c/201609/13/20160913092045549.jpg">
+<meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/mvp_moshi.jpg">
 <meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/login.png">
-<meta property="og:updated_time" content="2017-08-09T08:29:01.334Z">
+<meta property="og:updated_time" content="2017-08-09T08:35:38.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mvplib框架讲解之mvp篇">
 <meta name="twitter:description" content="贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。   这篇文章讲述mvplib依赖库的相关功能及其用法。  一、mvplib的build.gradle 引用的依赖库及其他配置12345678910111213141516171819202122232425262728293031323334apply plugin: &apos;com.android.library&apos;android &amp;#123;">
@@ -487,7 +487,7 @@
 <p>关于屏幕适配<code>autolayout</code>的用法在这里查看:</p>
 <p><a href="https://github.com/hongyangAndroid/AndroidAutoLayout" target="_blank" rel="external">Android屏幕适配方案，直接填写设计图上的像素尺寸即可完成适配，最大限度解决适配问题。</a></p>
 <h3 id="四、正式使用mvplib进行开发"><a href="#四、正式使用mvplib进行开发" class="headerlink" title="四、正式使用mvplib进行开发"></a>四、正式使用mvplib进行开发</h3><p>正式开发之前我们先来看一张图来理解一下什么是mvp模式:</p>
-<p><img src="http://pic.92to.com/2c/201609/13/20160913092045549.jpg" alt="mvpm模式"></p>
+<p><img src="http://osk74z31x.bkt.clouddn.com/mvp_moshi.jpg" alt="mvpm模式"></p>
 <p>​    MVP模式的核心思想就是把Activity中的UI逻辑抽象成view接口，把Controller相关的业务逻辑抽象成presenter接口，Model还是原来的Model。</p>
 <p>​    MVP模式的作用分离了视图逻辑和业务逻辑，降低耦合度 Activity只处理生命周期相关的东西，代码更加简洁 视图逻辑和业务逻辑分别抽象到了View和Presenter的接口中，提高了代码的可阅读性 Presenter被抽象成接口，可以有多种具体的实现，方便进行单元测试 把业务逻辑抽象到Presenter中，避免后台线程引用Activity导致Activity的资源无法被系统回收从而引起内存泄漏和OOMActivity代码变的更加简洁</p>
 <p><strong>接下来我就以一个登录的例子来演示mvplib的用法:</strong></p>
