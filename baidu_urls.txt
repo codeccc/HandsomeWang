@@ -1,3 +1,4 @@
+http://codewang.site/mvplib框架讲解之mvp篇.html
 http://codewang.site/实现Android 彩色渐变状态栏.html
 http://codewang.site/Android基于X5内核 WebView项目套壳优化.html
 http://codewang.site/更改android-4-4以上系统的状态栏和控制栏颜色.html

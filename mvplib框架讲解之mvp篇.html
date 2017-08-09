@@ -1,28 +1,479 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>樱花洛</title>
-  <subtitle>too young,too simple...</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<!doctype html>
+
+
+
   
-  <link href="http://codewang.site/"/>
-  <updated>2017-08-09T08:29:01.334Z</updated>
-  <id>http://codewang.site/</id>
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <author>
-    <name>樱花洛</name>
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>mvplib框架讲解之mvp篇</title>
-    <link href="http://codewang.site/mvplib%E6%A1%86%E6%9E%B6%E8%AE%B2%E8%A7%A3%E4%B9%8Bmvp%E7%AF%87.html"/>
-    <id>http://codewang.site/mvplib框架讲解之mvp篇.html</id>
-    <published>2017-08-08T09:52:24.000Z</published>
-    <updated>2017-08-09T08:29:01.334Z</updated>
     
-    <content type="html"><![CDATA[<div class="note primary"><p>贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。 </p>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android,mvp," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="樱花洛" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。   这篇文章讲述mvplib依赖库的相关功能及其用法。  一、mvplib的build.gradle 引用的依赖库及其他配置12345678910111213141516171819202122232425262728293031323334apply plugin: &apos;com.android.library&apos;android &amp;#123;">
+<meta name="keywords" content="android,mvp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mvplib框架讲解之mvp篇">
+<meta property="og:url" content="http://codewang.site/mvplib框架讲解之mvp篇.html">
+<meta property="og:site_name" content="樱花洛">
+<meta property="og:description" content="贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。   这篇文章讲述mvplib依赖库的相关功能及其用法。  一、mvplib的build.gradle 引用的依赖库及其他配置12345678910111213141516171819202122232425262728293031323334apply plugin: &apos;com.android.library&apos;android &amp;#123;">
+<meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%841.png">
+<meta property="og:image" content="http://pic.92to.com/2c/201609/13/20160913092045549.jpg">
+<meta property="og:image" content="http://osk74z31x.bkt.clouddn.com/login.png">
+<meta property="og:updated_time" content="2017-08-09T08:29:01.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mvplib框架讲解之mvp篇">
+<meta name="twitter:description" content="贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。   这篇文章讲述mvplib依赖库的相关功能及其用法。  一、mvplib的build.gradle 引用的依赖库及其他配置12345678910111213141516171819202122232425262728293031323334apply plugin: &apos;com.android.library&apos;android &amp;#123;">
+<meta name="twitter:image" content="http://osk74z31x.bkt.clouddn.com/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%841.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://codewang.site/mvplib框架讲解之mvp篇.html"/>
+
+
+
+
+
+  <title>mvplib框架讲解之mvp篇 | 樱花洛</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+    <div class="container sidebar-position-left page-post-detail ">
+        <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <a href="https://github.com/codeccc"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+        <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">樱花洛</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">too young,too simple...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://codewang.site/mvplib框架讲解之mvp篇.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="樱花洛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="樱花洛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mvplib框架讲解之mvp篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T17:52:24+08:00">
+                2017-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/mvplib框架讲解之mvp篇.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/mvplib框架讲解之mvp篇.html" class="leancloud_visitors" data-flag-title="mvplib框架讲解之mvp篇">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1295
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note primary"><p>贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。 </p>
 </div>
 <blockquote class="blockquote-center">这篇文章讲述mvplib依赖库的相关功能及其用法。</blockquote>
 
@@ -95,173 +546,1149 @@
 <p><a href="http://www.jianshu.com/p/c52909290e0e" target="_blank" rel="external">Android 使用FastJson解析json数据的手把手分析</a></p>
 <p><a href="https://github.com/crazycodeboy/TakePhoto" target="_blank" rel="external">一款用于在Android设备上获取照片（拍照或从相册、文件中选择）、裁剪图片、压缩图片的开源工具库</a></p>
 <p><a href="https://github.com/xsfelvis/ZeusLog" target="_blank" rel="external">支持移动端和控制台的日志工具</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;贵有恒何必三更起五更睡;最无益,只怕一日曝十日寒。 &lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;这篇文章讲述mvplib依赖库的相关功能及其用法。&lt;/blockquo
-    
-    </summary>
-    
-      <category term="android" scheme="http://codewang.site/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://codewang.site/tags/android/"/>
-    
-      <category term="mvp" scheme="http://codewang.site/tags/mvp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实现Android 彩色渐变状态栏</title>
-    <link href="http://codewang.site/%E5%AE%9E%E7%8E%B0Android%20%E5%BD%A9%E8%89%B2%E6%B8%90%E5%8F%98%E7%8A%B6%E6%80%81%E6%A0%8F.html"/>
-    <id>http://codewang.site/实现Android 彩色渐变状态栏.html</id>
-    <published>2017-08-04T10:10:22.000Z</published>
-    <updated>2017-08-04T11:29:36.202Z</updated>
-    
-    <content type="html"><![CDATA[<p>​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:</p>
-<p><img src="http://osk74z31x.bkt.clouddn.com/model_home_page.png?imageView/4/w/400/q/90" alt="image"></p>
-<p>效果显示很不错的,接下来正式进入我们的教程。</p>
-<p>1.首先在<code>colors.xml</code>中定义好使用的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;color name="theme_color_one"&gt;#f8b195&lt;/color&gt;</div><div class="line">&lt;color name="theme_color_two"&gt;#f291b0&lt;/color&gt;</div></pre></td></tr></table></figure></p>
-<p>2.在<code>drawable</code>文件加下创建<code>statusbar_theme_shape.xml</code>文件,并添加如下代码:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line">&lt;shape xmlns:android="http://schemas.android.com/apk/res/android"&gt;</div><div class="line"></div><div class="line">    &lt;corners android:radius="2dp"/&gt;</div><div class="line">    &lt;gradient</div><div class="line">        android:angle="0"</div><div class="line">        android:endColor="@color/theme_color_two"</div><div class="line">        android:startColor="@color/theme_color_one"/&gt;</div><div class="line"></div><div class="line">&lt;/shape&gt;</div></pre></td></tr></table></figure></p>
-<p>3.在<code>layout</code>中创建<code>activity_base.xml</code>文件,添加如下代码:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"</div><div class="line">              android:id="@+id/root_view"</div><div class="line">              android:layout_width="match_parent"</div><div class="line">              android:layout_height="match_parent"</div><div class="line">              android:orientation="vertical"&gt;</div><div class="line"></div><div class="line">    &lt;View</div><div class="line">        android:id="@+id/statusBarBg"</div><div class="line">        android:layout_width="match_parent"</div><div class="line">        android:layout_height="wrap_content"</div><div class="line">        android:background="@drawable/btn_theme_shape"/&gt;</div><div class="line">    &lt;FrameLayout</div><div class="line">        android:id="@+id/content_view"</div><div class="line">        android:layout_width="match_parent"</div><div class="line">        android:layout_height="match_parent"</div><div class="line">        android:fillViewport="true"&gt;</div><div class="line">    &lt;/FrameLayout&gt;</div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure></p>
-<p>3.创建<code>BaseActivity.class</code>类,添加如下代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">	<span class="comment">//得到布局id</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">getLayoutId</span><span class="params">()</span></span>;</div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        <span class="keyword">if</span> (!isCustomStatusBar()) &#123;</div><div class="line">            initWindowParameter();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//设置视图</span></div><div class="line">        setContentView(R.layout.activity_base);</div><div class="line">        initContentView();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     *初始化内容视图</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initContentView</span><span class="params">()</span> </span>&#123;</div><div class="line">      	<span class="comment">//得到内容视图</span></div><div class="line">        mContentView = (ViewGroup) findViewById(R.id.content_view);</div><div class="line">      	<span class="comment">//得到状态栏视图</span></div><div class="line">        mStatusView = findViewById(R.id.statusBarBg);</div><div class="line">        <span class="keyword">if</span> (mLayoutView == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">int</span> layoutId = getLayoutId();</div><div class="line">            <span class="keyword">if</span> (layoutId != <span class="number">0</span>) &#123;</div><div class="line">                mBinding = DataBindingUtil.inflate(getLayoutInflater(), layoutId, mContentView, <span class="keyword">false</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//得到继承自BaseActivity的Activity的根视图</span></div><div class="line">            mLayoutView = mBinding.getRoot();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//清除所有视图</span></div><div class="line">        mContentView.removeAllViews();</div><div class="line">        <span class="comment">//将子类的根视图添加到内容视图中</span></div><div class="line">        mContentView.addView(mLayoutView);</div><div class="line">        <span class="comment">//设置状态栏样式</span></div><div class="line">        setStatusBarColor();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 设置状态栏颜色</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStatusBarColor</span><span class="params">()</span> </span>&#123;</div><div class="line">      	<span class="comment">//从Android4.4开始加入对状态栏样式的更改</span></div><div class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;</div><div class="line">          	<span class="comment">//得到状态栏高度并设置状态栏参数</span></div><div class="line">            LinearLayout.LayoutParams lParams = <span class="keyword">new</span> LinearLayout.LayoutParams(LinearLayout</div><div class="line">                    .LayoutParams.MATCH_PARENT, ScreenUtils.getStatusHeight(<span class="keyword">this</span>));</div><div class="line">            mStatusView.setBackgroundResource(R.drawable.btn_theme_shape);</div><div class="line">            mStatusView.setLayoutParams(lParams);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 设置状态栏等与Window相关的参数</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initWindowParameter</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) &#123;<span class="comment">//5.0+</span></div><div class="line">            View decorView = getWindow().getDecorView();</div><div class="line">            <span class="keyword">int</span> option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN</div><div class="line">                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;</div><div class="line"><span class="comment">//            if (mIsLight) &#123; //如果StatusBar为亮色主题的话，则文字颜色为深色</span></div><div class="line"><span class="comment">//                option = option | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;</span></div><div class="line"><span class="comment">//            &#125;</span></div><div class="line">            decorView.setSystemUiVisibility(option);</div><div class="line">            <span class="comment">//设置透明状态栏</span></div><div class="line">            getWindow().setStatusBarColor(Color.TRANSPARENT);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;<span class="comment">//4.4~5.0</span></div><div class="line">            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();</div><div class="line">            <span class="comment">//设置透明状态栏</span></div><div class="line">            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS |</div><div class="line">                    localLayoutParams.flags);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//设置Activity与软键盘的交互方式</span></div><div class="line">        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>5.所有需要实现渐变状态栏的<code>Activity</code>继承自<code>BaseActivity</code>便可实现这种渐变色状态栏的效果</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;​        一般应用的开发都是纯色状态栏或者透明状态栏,一般开发者也很少或者基本不接触渐变色状态栏这个东西,但如果项目需求需要做渐变色状态栏,这种需求该如何处理了.接下来我将以我的实现效果为例,讲解这种效果对应的解决办法。话不多说,先来看一眼效果图吧:&lt;/p&gt;
-&lt;p&gt;
-    
-    </summary>
-    
-      <category term="android" scheme="http://codewang.site/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://codewang.site/tags/android/"/>
-    
-      <category term="状态栏" scheme="http://codewang.site/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android基于X5内核 WebView项目套壳优化</title>
-    <link href="http://codewang.site/Android%E5%9F%BA%E4%BA%8EX5%E5%86%85%E6%A0%B8%20WebView%E9%A1%B9%E7%9B%AE%E5%A5%97%E5%A3%B3%E4%BC%98%E5%8C%96.html"/>
-    <id>http://codewang.site/Android基于X5内核 WebView项目套壳优化.html</id>
-    <published>2017-07-31T07:25:44.000Z</published>
-    <updated>2017-07-31T07:25:34.519Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="一、webview加载缓慢-如何提高加载使用效率"><a href="#一、webview加载缓慢-如何提高加载使用效率" class="headerlink" title="一、webview加载缓慢,如何提高加载使用效率?"></a>一、webview加载缓慢,如何提高加载使用效率?</h5><ol>
-<li><p>设置渲染等级为高</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">settings.setRenderPriority(WebSettings.RenderPriority.HIGH);</div></pre></td></tr></table></figure>
-</li>
-<li><p>在java代码中动态创建webview</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">WebView webView = <span class="keyword">new</span> WebView(getApplicationContext(), <span class="keyword">null</span>);</div><div class="line">webView.setLayoutParams(<span class="keyword">new</span> ViewGroup.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));</div><div class="line">mBinding.mainView.addView(webView, <span class="number">0</span>);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="二、Webview缓存使用策略"><a href="#二、Webview缓存使用策略" class="headerlink" title="二、Webview缓存使用策略"></a>二、Webview缓存使用策略</h5><p>webview的五种缓存策略模式:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LOAD_DEFAULT = -<span class="number">1</span>;<span class="comment">//默认模式</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LOAD_NORMAL = <span class="number">0</span>;<span class="comment">//普通模式</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LOAD_CACHE_ELSE_NETWORK = <span class="number">1</span>;<span class="comment">//如果有缓存,优先加载缓存,否则从网络获取数据</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LOAD_NO_CACHE = <span class="number">2</span>;<span class="comment">//不加载缓存,只从网络获取数据</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LOAD_CACHE_ONLY = <span class="number">3</span>;<span class="comment">//只加载缓存</span></div></pre></td></tr></table></figure></p>
-<p>如果加载的是静态页面,网页数据样式固定,则推荐使用<code>LOAD_CACHE_ELSE_NETWORK</code>模式;</p>
-<p>如果加载的数据是从服务器动态获取的,比如帖子论坛页面,个人信息页面,则推荐使用<code>LOAD_NO_CACHE</code>,以保证每次都能获取最新内容</p>
-<p>如果加载的网页是app端内置于<code>assets</code>目录写死的网页,则可以使用<code>LOAD_CACHE_ONLY</code>模式;</p>
-<h5 id="三、关于webview页面输入法弹窗遮挡输入框的问题解决方案"><a href="#三、关于webview页面输入法弹窗遮挡输入框的问题解决方案" class="headerlink" title="三、关于webview页面输入法弹窗遮挡输入框的问题解决方案"></a>三、关于webview页面输入法弹窗遮挡输入框的问题解决方案</h5><p>在<code>Activity</code>的<code>OnCrate()</code>方法中加入如下代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.getWindow().setSoftInputMode(</div><div class="line">                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE |</div><div class="line">                        WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN</div><div class="line">        );</div></pre></td></tr></table></figure></p>
-<p>,此段代码含义是输入法高度状态自适应,如果有输入法弹出,则重新调整页面布局使输入框处于输入法上面</p>
-<h5 id="四、webview网页加载速度提升"><a href="#四、webview网页加载速度提升" class="headerlink" title="四、webview网页加载速度提升"></a>四、webview网页加载速度提升</h5><p>在开始加载前设置<code>settings.setBlockNetworkImage(true);</code>先屏蔽掉加载网页,然后在<br>设置webview的<code>setWebViewClient()</code>方法里<code>new</code>出新的<code>WebViewClient()</code>时,在重写的方法<code>onPageFinished()</code>中再设置<code>mWebSettings.setBlockNetworkImage(false);</code>取消图片加载屏蔽限制</p>
-<h5 id="五、WebView避免内存泄漏"><a href="#五、WebView避免内存泄漏" class="headerlink" title="五、WebView避免内存泄漏"></a>五、WebView避免内存泄漏</h5><ul>
-<li>不在xml中定义 Webview ，而是在需要的时候在Activity中创建，并且Context使用 getApplicationgContext()</li>
-<li>在 Activity 销毁（ WebView ）的时候，先让 WebView 加载null内容，然后移除 WebView，再销毁 WebView，最后置空。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mWebView != <span class="keyword">null</span>) &#123;</div><div class="line">        mWebView.loadDataWithBaseURL(<span class="keyword">null</span>, <span class="string">""</span>, <span class="string">"text/html"</span>, <span class="string">"utf-8"</span>, <span class="keyword">null</span>);</div><div class="line">        mWebView.clearHistory();</div><div class="line"></div><div class="line">        ((ViewGroup) mWebView.getParent()).removeView(mWebView);</div><div class="line">        mWebView.destroy();</div><div class="line">        mWebView = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">super</span>.onDestroy();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="六、Webview的Cookie处理"><a href="#六、Webview的Cookie处理" class="headerlink" title="六、Webview的Cookie处理"></a>六、<code>Webview</code>的<code>Cookie</code>处理</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 设置浏览器的cookies</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCookies</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (NetCenter.cookies.length() &gt; <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        CookieSyncManager.createInstance(AppApplication.getInstance());</div><div class="line">        CookieManager cookieManager = CookieManager.getInstance();</div><div class="line">        cookieManager.setAcceptCookie(<span class="keyword">true</span>);</div><div class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP)</div><div class="line">        &#123;</div><div class="line">            cookieManager.setAcceptThirdPartyCookies(webView, <span class="keyword">true</span>);<span class="comment">//解决cookie更新失败的问题</span></div><div class="line">        &#125;</div><div class="line">        cookieManager.setCookie(NetCenter.PAGE_URL, NetCenter.cookies);</div><div class="line">        CookieSyncManager.getInstance().sync();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="comment">/**</span></div><div class="line"> * 清空浏览器的cookies</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clearCookies</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    CookieSyncManager cookieSyncMngr =</div><div class="line">            CookieSyncManager.createInstance(<span class="keyword">this</span>);</div><div class="line">    CookieManager cookieManager = CookieManager.getInstance();</div><div class="line">    cookieManager.removeSessionCookie();<span class="comment">// 移除</span></div><div class="line">    cookieManager.removeAllCookie();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="七、WebChromeClient文件上传处理"><a href="#七、WebChromeClient文件上传处理" class="headerlink" title="七、WebChromeClient文件上传处理"></a>七、WebChromeClient文件上传处理</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">webView.setWebChromeClient(<span class="keyword">new</span> WebChromeClient()</div><div class="line">&#123;</div><div class="line">    <span class="comment">//扩展浏览器上传文件</span></div><div class="line">    <span class="comment">//3.0++版本</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; uploadMsg, String acceptType)</span></span></div><div class="line">    &#123;</div><div class="line">        </div><div class="line">        openPicForWebClient(uploadMsg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3.0--版本</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; uploadMsg)</span></span></div><div class="line">    &#123;</div><div class="line">        </div><div class="line">        openPicForWebClient(uploadMsg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; uploadMsg, String acceptType, String capture)</span></span></div><div class="line">    &#123;</div><div class="line">       </div><div class="line">        openPicForWebClient(uploadMsg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// For Android &gt; 5.0,移动端需要处理的核心</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onShowFileChooser</span><span class="params">(WebView webView, ValueCallback&lt;Uri[]&gt; uploadMsg, WebChromeClient.FileChooserParams fileChooserParams)</span></span></div><div class="line">    &#123;</div><div class="line">        openPicForWebClient(uploadMsg);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>,上传核心代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri=...;</div><div class="line">mUploadMessage.onReceiveValue(uri);</div></pre></td></tr></table></figure></p>
-<p>,在选择好图片或者文件后调用<code>ValueCallback&lt;Uri&gt; uploadMsg</code>的<code>onReceiveValue</code>传入文件的uri即可上传文件。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h5 id=&quot;一、webview加载缓慢-如何提高加载使用效率&quot;&gt;&lt;a href=&quot;#一、webview加载缓慢-如何提高加载使用效率&quot; class=&quot;headerlink&quot; title=&quot;一、webview加载缓慢,如何提高加载使用效率?&quot;&gt;&lt;/a&gt;一、webview加载缓慢
-    
-    </summary>
-    
-      <category term="android" scheme="http://codewang.site/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://codewang.site/tags/android/"/>
-    
-      <category term="WebView" scheme="http://codewang.site/tags/WebView/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>更改android 4.4以上系统的状态栏和控制栏颜色</title>
-    <link href="http://codewang.site/%E6%9B%B4%E6%94%B9android-4-4%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%8A%B6%E6%80%81%E6%A0%8F%E5%92%8C%E6%8E%A7%E5%88%B6%E6%A0%8F%E9%A2%9C%E8%89%B2.html"/>
-    <id>http://codewang.site/更改android-4-4以上系统的状态栏和控制栏颜色.html</id>
-    <published>2017-07-03T09:17:44.000Z</published>
-    <updated>2017-07-04T04:59:07.216Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note primary"><p>心灵毒汤: 有时候不努力一把真的不知道什么叫绝望 </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="樱花洛 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
 </div>
-<blockquote class="blockquote-center">这篇文章来介绍如何在java代码中更改系统状态栏和控制栏的颜色。</blockquote>
 
 
+      
+    </div>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置顶部状态栏颜色（此功能仅19版本以上可用）</span></div><div class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;</div><div class="line">    Window window = getWindow();</div><div class="line">    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);</div><div class="line">    SystemBarTintManager tintManager = <span class="keyword">new</span> SystemBarTintManager(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">// 激活状态栏设置</span></div><div class="line">    tintManager.setStatusBarTintEnabled(<span class="keyword">true</span>);</div><div class="line">    <span class="comment">// 使用颜色资源</span></div><div class="line">    tintManager.setStatusBarTintResource(R.color.button_pressed);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面代码的意思就是</p>
-<ol>
-<li><p>首先将状态栏的设置为透明，不透明，下面你设置的颜色是没有效果的。</p>
-</li>
-<li><p>然后再激活状态栏的设置。</p>
-</li>
-<li><p>给状态栏设置颜色</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;心灵毒汤: 有时候不努力一把真的不知道什么叫绝望 &lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;这篇文章来介绍如何在java代码中更改系统状态栏和控制栏的颜色。&lt;/bl
-    
-    </summary>
-    
-      <category term="android" scheme="http://codewang.site/categories/android/"/>
-    
-    
-      <category term="android" scheme="http://codewang.site/tags/android/"/>
-    
-      <category term="状态栏" scheme="http://codewang.site/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
-    
-  </entry>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>分享技术,共同成长!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-reward-image.jpg" alt="樱花洛 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay-reward-image.jpg" alt="樱花洛 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+<div>
   
-  <entry>
-    <title>Hello World</title>
-    <link href="http://codewang.site/hello-world.html"/>
-    <id>http://codewang.site/hello-world.html</id>
-    <published>2017-07-03T05:37:33.512Z</published>
-    <updated>2017-07-03T05:37:33.513Z</updated>
+    <div>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
     
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
+</div>
   
-</feed>
+</div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"><i class="fa fa-tag"></i> android</a>
+          
+            <a href="/tags/mvp/" rel="tag"><i class="fa fa-tag"></i> mvp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/实现Android 彩色渐变状态栏.html" rel="next" title="实现Android 彩色渐变状态栏">
+                <i class="fa fa-chevron-left"></i> 实现Android 彩色渐变状态栏
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="樱花洛" />
+          <p class="site-author-name" itemprop="name">樱花洛</p>
+           
+              <p class="site-description motion-element" itemprop="description">提供Android技术分享...</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/codeccc" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3964287667" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/5795684679bc4400663882aa" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-angle-double-down"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://github.com/codeccc" title="帅气迷人宝贝博的Github" target="_blank">帅气迷人宝贝博的Github</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、mvplib的build-gradle-引用的依赖库及其他配置"><span class="nav-number">1.</span> <span class="nav-text">一、mvplib的build.gradle 引用的依赖库及其他配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、mvplib的项目结构介绍"><span class="nav-number">2.</span> <span class="nav-text">二、mvplib的项目结构介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、-使用mvplib需要注意的地方"><span class="nav-number">3.</span> <span class="nav-text">三、 使用mvplib需要注意的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-关于Application的使用"><span class="nav-number">3.1.</span> <span class="nav-text">1.关于Application的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-meta-data的配置"><span class="nav-number">3.2.</span> <span class="nav-text">2.meta-data的配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、正式使用mvplib进行开发"><span class="nav-number">4.</span> <span class="nav-text">四、正式使用mvplib进行开发</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-首先先编写登录界面activity-login-xml的代码-我这里增加一个文本来展示登录的结果-实现的效果图如下"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.首先先编写登录界面activity_login.xml的代码,我这里增加一个文本来展示登录的结果,实现的效果图如下:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-确定登录要使用到的model"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.确定登录要使用到的model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-开始编写LoginView"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.开始编写LoginView</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-开始编写LoginPresenter"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.开始编写LoginPresenter</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-从Sharedpreferences中读取保存的用户名密码"><span class="nav-number">4.0.4.1.</span> <span class="nav-text">1.从Sharedpreferences中读取保存的用户名密码:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-执行登录操作-将用户名及密码提交至服务器登"><span class="nav-number">4.0.4.2.</span> <span class="nav-text">2.执行登录操作,将用户名及密码提交至服务器登;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-登录时将用户名密码保存到Sharedpreferences中"><span class="nav-number">4.0.4.3.</span> <span class="nav-text">3.登录时将用户名密码保存到Sharedpreferences中;</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-编写Activity代码"><span class="nav-number">4.0.5.</span> <span class="nav-text">5.编写Activity代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、-结尾-相关知识用法说明"><span class="nav-number">5.</span> <span class="nav-text">五、 结尾  相关知识用法说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+   
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">樱花洛</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+</div>
+
+
+<!--<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a8ecba86faa9455b9921ec3c4a143d1d",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("uFYvmbCp1f07k5COp9wnQklP-gzGzoHsz", "zGgJoLch4bXtFYFI8xiKJSN9");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+	  <div class="bg_content">
+           <div class="landscape"></div>
+           <div class="filter"></div>
+           <canvas id="canvas"></canvas>
+       </div>
+       <script>
+       'use strick';
+	function Star(id, x, y){
+           this.id = id;
+           this.x = x;
+           this.y = y;
+           this.r = Math.floor(Math.random()*2)+1;
+           var alpha = (Math.floor(Math.random()*10)+1)/10/2;
+           this.color = "rgba(255,255,255,"+alpha+")";
+         }
+
+         Star.prototype.draw = function() {
+           ctx.fillStyle = this.color;
+           ctx.shadowBlur = this.r * 2;
+           ctx.beginPath();
+           ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+           ctx.closePath();
+           ctx.fill();
+         }
+
+         Star.prototype.move = function() {
+           this.y -= .15;
+           if (this.y <= -10) this.y = HEIGHT + 10;
+           this.draw();
+         }
+
+         Star.prototype.die = function() {
+             stars[this.id] = null;
+             delete stars[this.id];
+         }
+
+
+         function Dot(id, x, y, r) {
+           this.id = id;
+           this.x = x;
+           this.y = y;
+           this.r = Math.floor(Math.random()*5)+1;
+           this.maxLinks = 2;
+           this.speed = .5;
+           this.a = .5;
+           this.aReduction = .005;
+           this.color = "rgba(255,255,255,"+this.a+")";
+           this.linkColor = "rgba(255,255,255,"+this.a/4+")";
+
+           this.dir = Math.floor(Math.random()*140)+200;
+         }
+
+         Dot.prototype.draw = function() {
+           ctx.fillStyle = this.color;
+           ctx.shadowBlur = this.r * 2;
+           ctx.beginPath();
+           ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+           ctx.closePath();
+           ctx.fill();
+         }
+
+         Dot.prototype.link = function() {
+           if (this.id == 0) return;
+           var previousDot1 = getPreviousDot(this.id, 1);
+           var previousDot2 = getPreviousDot(this.id, 2);
+           var previousDot3 = getPreviousDot(this.id, 3);
+           if (!previousDot1) return;
+           ctx.strokeStyle = this.linkColor;
+           ctx.moveTo(previousDot1.x, previousDot1.y);
+           ctx.beginPath();
+           ctx.lineTo(this.x, this.y);
+           if (previousDot2 != false) ctx.lineTo(previousDot2.x, previousDot2.y);
+           if (previousDot3 != false) ctx.lineTo(previousDot3.x, previousDot3.y);
+           ctx.stroke();
+           ctx.closePath();
+         }
+
+         function getPreviousDot(id, stepback) {
+           if (id == 0 || id - stepback < 0) return false;
+           if (typeof dots[id - stepback] != "undefined") return dots[id - stepback];
+           else return false;//getPreviousDot(id - stepback);
+         }
+
+         Dot.prototype.move = function() {
+           this.a -= this.aReduction;
+           if (this.a <= 0) {
+             this.die();
+             return
+           }
+           this.color = "rgba(255,255,255,"+this.a+")";
+           this.linkColor = "rgba(255,255,255,"+this.a/4+")";
+           this.x = this.x + Math.cos(degToRad(this.dir))*this.speed,
+           this.y = this.y + Math.sin(degToRad(this.dir))*this.speed;
+
+           this.draw();
+           this.link();
+         }
+
+         Dot.prototype.die = function() {
+             dots[this.id] = null;
+             delete dots[this.id];
+         }
+
+
+         var canvas  = document.getElementById('canvas'),
+           ctx = canvas.getContext('2d'),
+           WIDTH,
+           HEIGHT,
+           mouseMoving = false,
+           mouseMoveChecker,
+           mouseX,
+           mouseY,
+           stars = [],
+           initStarsPopulation = 80,
+           dots = [],
+           dotsMinDist = 2,
+           maxDistFromCursor = 50;
+
+         setCanvasSize();
+         init();
+
+         function setCanvasSize() {
+           WIDTH = document.documentElement.clientWidth,
+             HEIGHT = document.documentElement.clientHeight;
+
+           canvas.setAttribute("width", WIDTH);
+           canvas.setAttribute("height", HEIGHT);
+         }
+
+         function init() {
+           ctx.strokeStyle = "white";
+           ctx.shadowColor = "white";
+           for (var i = 0; i < initStarsPopulation; i++) {
+             stars[i] = new Star(i, Math.floor(Math.random()*WIDTH), Math.floor(Math.random()*HEIGHT));
+             //stars[i].draw();
+           }
+           ctx.shadowBlur = 0;
+           animate();
+         }
+
+         function animate() {
+             ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+             for (var i in stars) {
+               stars[i].move();
+             }
+             for (var i in dots) {
+               dots[i].move();
+             }
+             drawIfMouseMoving();
+             requestAnimationFrame(animate);
+         }
+
+         window.onmousemove = function(e){
+           mouseMoving = true;
+           mouseX = e.clientX;
+           mouseY = e.clientY;
+           clearInterval(mouseMoveChecker);
+           mouseMoveChecker = setTimeout(function() {
+             mouseMoving = false;
+           }, 100);
+         }
+
+
+         function drawIfMouseMoving(){
+           if (!mouseMoving) return;
+
+           if (dots.length == 0) {
+             dots[0] = new Dot(0, mouseX, mouseY);
+             dots[0].draw();
+             return;
+           }
+
+           var previousDot = getPreviousDot(dots.length, 1);
+           var prevX = previousDot.x;
+           var prevY = previousDot.y;
+
+           var diffX = Math.abs(prevX - mouseX);
+           var diffY = Math.abs(prevY - mouseY);
+
+           if (diffX < dotsMinDist || diffY < dotsMinDist) return;
+
+           var xVariation = Math.random() > .5 ? -1 : 1;
+           xVariation = xVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
+           var yVariation = Math.random() > .5 ? -1 : 1;
+           yVariation = yVariation*Math.floor(Math.random()*maxDistFromCursor)+1;
+           dots[dots.length] = new Dot(dots.length, mouseX+xVariation, mouseY+yVariation);
+           dots[dots.length-1].draw();
+           dots[dots.length-1].link();
+         }
+         //setInterval(drawIfMouseMoving, 17);
+
+         function degToRad(deg) {
+           return deg * (Math.PI / 180);
+         }</script>
+
+</body>
+</html>
+<!-- ҳ������С���� -->
+<script type="text/javascript" src="/js/src/love.js"></script>
